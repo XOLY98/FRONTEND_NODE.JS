@@ -1,4 +1,4 @@
-const express = require('require');
+const express = require('express');
 
 const route = require('./controller');
 
@@ -8,7 +8,7 @@ const port = parseInt(process.env.PORT) || 5000;
 
 const app = express();
 
-const {errorHandling} = require('./middleware/errorHandling');
+const {errorHandling} = require('./middleware/errorHandling.js');
 
 const cookieParser = require('cookie-parser');
 
@@ -25,7 +25,7 @@ app.use(
     cors(),
     cookieParser(),
     express.json,
-    express.urlEncoded({extended: false})
+    express.urlencoded({extended: false})
 );
 
 app.listen(port, ()=> {
