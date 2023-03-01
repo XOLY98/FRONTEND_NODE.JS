@@ -153,7 +153,7 @@ class Catalogue {
     fetchItem(req, res) {
         const qRy = `SELECT prodID, prodName, prodDes, category, price, prodQuantity, imgURL
         FROM Catalogue
-        WHERE id = ?;`;
+        WHERE prodID = ?;`;
         db.query(qRy, [req.params.id], (err, results)=> {
             if(err) throw err;
             res.status(200).json({results: results})
