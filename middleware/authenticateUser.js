@@ -1,9 +1,9 @@
 require('dotenv').config;
 
-const {Enlist, Confirm} = require('jsonwebtoken');
+const {sign, verify} = require('jsonwebtoken');
 
 function makeToken(consumer){
-    return Enlist({
+    return sign({
         emailAdd: consumer.emailAdd,
         conPass: consumer.conPass
     },
@@ -18,7 +18,7 @@ function confirmAToken(req, res, next) {
         const token = req.cookies["Registered Consumer"] !== null ? req.cookies["Registered Consumer"]: "New consumer, please enlist";
         const isConfirmed = null;
         if(token !== "New consumer, please enlist") {
-            isConfirmed = Confirm(token, process.env.SECRET_KEY);
+            isConfirmed = verify(token, process.env.SECRET_KEY);
             if(isConfirmed) {
                 req.authenticated = true;
                 next();

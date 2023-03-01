@@ -18,38 +18,43 @@ route.get("^/$|/Styletto's", (req, res)=> {
 
 // ===============Consumers Route======================
 
-route.post('/login', bodyParser.json(), (req, res)=>{
-    consumer.login(req, res);
+route.get('/consumers', (req, res)=> { 
+    consumer.fetchConsumers(req, res);
 });
 
-route.get('/consumers', (req, res)=> {
+route.post('/consumer', bodyParser.json(), (req, res)=>{
     consumer.createConsumer(req, res);
 });
 
 route.put('/consumer/:ID', bodyParser.json(), (req, res)=>{
-    consumer.updateConsumer(req, res);
+    consumer.renewConsumer(req, res);
+});
+
+route.delete('/consumer/:ID', (req, res)=> {
+    consumer.removeConsumer(req, res);
+});
+
+route.patch('/login', (req, res)=> {
+    consumer.login(req, res);
 });
 
 // =================Catalogue Route=====================
 
-route.delete('/catalogue', (req, res)=> {
+
+route.get('/catalogue', (req, res)=> {
     catalogue.fetchCatalogue(req, res);
 });
 
-route.get('/catalogue/:ID', (req, res)=> {
-    catalogue.fetchItem(req, res);
-});
-
 route.post('/catalogue', bodyParser.json(), (req, res)=> {
-    catalogue.addItem(req, res);
+    catalogue.includeItem(req, res);
 });
 
 route.put('/catalogue/:ID', bodyParser.json(), (req, res)=> {
-    catalogue.updateCatalogue(req, res);
+    catalogue.improveItem(req, res);
 });
 
 route.delete('/catalogue/:ID', (req, res)=>{
-    catalogue.deleteItem(req, res);
+    catalogue.deleteProduct(req, res);
 });
 
 module.exports = route;

@@ -11,7 +11,7 @@ class Consumer{
         const {emailAdd, conPass} = req.body;
         const qRy = 
         `
-        SELECT conID, firstName, lastName, gender, cellphoneNumber, emailAdd, conPass, conRole, conProf, loginDate
+        SELECT DEFAULT, firstName, lastName, gender, cellphoneNumber, emailAdd, conPass, conRole, conProf, loginDate
         FROM Consumers
         WHERE emailAdd = ${emailAdd};
         `;
@@ -50,7 +50,7 @@ class Consumer{
     fetchConsumers(req, res) {
         const qRy = 
         `
-        SELECT conID, firstName, lastName, gender, emailAdd, conRole, conProf
+        SELECT DEFAULT, firstName, lastName, gender, cellphoneNumber, emailAdd, conRole, conProf, loginDate
         FROM Consumers;
         `;
 
@@ -59,10 +59,10 @@ class Consumer{
             else res.status(200).json({results:data})
         })
     }
-    fetchConsumer(req, res) {
+    fetchConsumers(req, res) {
         const qRy = 
         `
-        SELECT conID, firstName, lastName , gender, emailAdd, conRole , conProf 
+        SELECT DEFAULT, firstName, lastName , gender, cellphoneNumber, emailAdd, conRole , conProf, loginDate
         FROM Consumers
         WHERE conID;
         `
@@ -88,7 +88,7 @@ class Consumer{
 
         db.query(qRy, [feature], (err)=> {
             if(err) {
-                res.status(401).json({err});
+                res.status(401).json({err}), console.log(err);;
             }else {
                 
                 const jwToken = makeToken(consumer);
@@ -109,9 +109,9 @@ class Consumer{
             info.conPass = hashSync(info.conPass, 15);
         const qRy = 
         `
-        UPDATE Users
+        UPDATE Consumers
         SET ?
-        WHERE userID = ?;
+        WHERE conID = ?;
         `;
         
         db.query(qRy,[info, req.params.id], 
@@ -182,7 +182,7 @@ class Catalogue {
         `
         UPDATE Catalogue
         SET ?
-        WHERE id = ?
+        WHERE prodID = ?
         `;
         db.query(qRy,[req.body, req.params.id],
             (err)=> {
@@ -199,7 +199,7 @@ class Catalogue {
         const qRy = 
         `
         DELETE FROM Catalogue
-        WHERE id = ?;
+        WHERE prodID = ?;
         `;
         db.query(qRy,[req.params.id], (err)=> {
             if(err) res.status(400).json({err: 'Data was not found in the records.'});

@@ -28,6 +28,10 @@ app.use(
     express.urlencoded({extended: false})
 );
 
+// route.get("^/$|/Styletto's", (req, res)=> {
+//     res.status(200).sendFile(path.join(__dirname,'./views/index.html'));
+// })
+
 app.listen(port, ()=> {
     console.log(`Server 5000 is operating successfully!`)
 });
