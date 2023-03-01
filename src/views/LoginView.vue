@@ -1,7 +1,9 @@
 <template>
     <div>
-        <UserProfile/>
-        <ForgotPwd/>
+
+      <h1>This is a login page </h1>
+        <!-- <UserProfile/>
+        <ForgotPwd/> -->
     </div>
 </template>
 <script>
