@@ -26,11 +26,11 @@ route.post('/consumer', bodyParser.json(), (req, res)=>{
     consumer.createConsumer(req, res);
 });
 
-route.put('/consumer/:ID', bodyParser.json(), (req, res)=>{
+route.put('/consumer/:id', bodyParser.json(), (req, res)=>{
     consumer.renewConsumer(req, res);
 });
 
-route.delete('/consumer/:ID', (req, res)=> {
+route.delete('/consumer/:id', (req, res)=> {
     consumer.removeConsumer(req, res);
 });
 
@@ -45,15 +45,19 @@ route.get('/catalogue', (req, res)=> {
     catalogue.fetchCatalogue(req, res);
 });
 
+route.get('/catalogue/:id', (req, res)=> {
+    catalogue.fetchItem(req, res);
+});
+
 route.post('/catalogue', bodyParser.json(), (req, res)=> {
     catalogue.includeItem(req, res);
 });
 
-route.put('/catalogue/:ID', bodyParser.json(), (req, res)=> {
+route.put('/catalogue/:id', bodyParser.json(), (req, res)=> {
     catalogue.improveItem(req, res);
 });
 
-route.delete('/catalogue/:ID', (req, res)=>{
+route.delete('/catalogue/:id', (req, res)=>{
     catalogue.deleteProduct(req, res);
 });
 
