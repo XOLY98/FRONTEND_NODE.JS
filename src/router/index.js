@@ -20,14 +20,10 @@ const routes = [
     name: 'contact',
     component: () => import( '../views/ContactView.vue')
   },
+  
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/LoginView.vue')
-  },
-  {
-    path: '/product',
-    name: 'product',
+    path: '/products',
+    name: 'products',
     component: () => import( '../views/ProductView.vue')
   },
   {
