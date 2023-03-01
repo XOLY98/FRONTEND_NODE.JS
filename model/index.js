@@ -62,9 +62,9 @@ class Consumer{
     fetchConsumers(req, res) {
         const qRy = 
         `
-        SELECT DEFAULT, firstName, lastName , gender, cellphoneNumber, emailAdd, conRole , conProf, loginDate
+        SELECT  firstName, lastName , gender, cellphoneNumber, emailAdd, conRole , conProf, loginDate
         FROM Consumers
-        WHERE conID;
+        WHERE conID = ?;
         `
         db.query(qRy,[req.params.id], (err, data)=> {
             if(err) throw err;
