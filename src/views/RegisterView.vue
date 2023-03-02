@@ -1,15 +1,17 @@
-<template lang="">
-    <div>
-        <AddUser/>
-    </div>
+<template>
+ <div>
+
+ </div>
+   
 </template>
 
 <script>
-import AddUser from '@/components/AddUser.vue';
+
+
 export default {
     name: 'RegisterView',
   components: {
-    AddUser
+    
   }
 }
 </script>

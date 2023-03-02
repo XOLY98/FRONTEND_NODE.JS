@@ -1,40 +1,53 @@
-import axios from 'axios'
-import { createStore } from 'vuex'
-const bedURL =""
+import axios from "axios";
+import { createStore } from "vuex";
+const bedURL = "https://stylettos.onrender.com/";
 export default createStore({
   state: {
-    users:null,
-    user:null,
-  products:null,
-  product:null,
-  showSpinner:true,
-  message:null
+    consumers: null,
+    consumer: null,
+    catalogues: null,
+    catalogue: null,
+    showSpinner: true,
+    message: null,
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
-    setUsers(state,values){
-      state.users=values
+    setConsumers(state, values) {
+      state.users = values;
     },
-    setUser(state,value){
-      state.user=value
+    setConsumer(state, value) {
+      state.user = value;
     },
-    setMessage(state,value){
-      state.message=value;
-    }
+    setMessage(state, value) {
+      state.message = value;
+    },
+    setCatalogue(state, values) {
+      state.catalogues = values;
+    },
+    setItem(state, value) {
+      state.product = value;
+    },
   },
   actions: {
-    async fetchUsers(context){
-      const res= await axios.get(`${bedURL}Users`);
-      const {results,err}=await res.data;
-      if (results){
-        context.commit('setUsers',results)
-      }else{
-        context.commit('setMessage',err)
+    async fetchConsumers(context) {
+      const res = await axios.get(`${bedURL}Consumers`);
+      const { results, err } = await res.data;
+      if (results) {
+        context.commit("setConsumers", results);
+      } else {
+        context.commit("setMessage", err);
       }
-
-    }
+    },
+    async fetchCatalogue(context) {
+      const res = await axios.get(`${bedURL}Catalogue`);
+      const { results, err } = await res.data;
+      if (results) {
+        // console.log(results);
+        context.commit("setCatalogue", results);
+      } else {
+        context.commit("setItem", err);
+      }
+    },
   },
-  modules: {
-  }
-})
+  modules: {},
+});

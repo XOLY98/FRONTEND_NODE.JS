@@ -1,19 +1,14 @@
 <template>
-    <div>
-
-      <h1>This is a login page </h1>
-        <!-- <UserProfile/>
-        <ForgotPwd/> -->
-    </div>
+   <div></div>
 </template>
 <script>
-import ForgotPwd  from '@/components/ForgotPwd.vue'
-import UserProfile from '@/components/UserProfile.vue'
+// import ForgotPwd  from '@/components/ForgotPwd.vue'
+// import UserProfile from '@/components/UserProfile.vue'
 export default {
     name: 'LoginView',
   components: {
-    ForgotPwd,
-    UserProfile
+    // ForgotPwd,
+    // UserProfile
   }
 }
 

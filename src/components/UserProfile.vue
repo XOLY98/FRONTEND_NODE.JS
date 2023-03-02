@@ -1,6 +1,7 @@
 <template lang="">
     <div>
-        <UserProfile/>
+      
+        
     </div>
 </template>
 <script>
