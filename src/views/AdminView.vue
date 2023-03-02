@@ -1,38 +1,35 @@
 <template>
-  <div>
-    <table class="table table-dark">
-      <thead>
-        ...
-      </thead>
-      <tbody>
-        <tr class="table-active">
-          ...
-        </tr>
-        <tr>
-          ...
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2" class="table-active">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- <UpdateUser/>
-    <AddProduct/> -->
-  </div>
+<div>
+
+  <h1>Admin</h1>
+  
+  <AddUser/>
+  <AddProduct/>
+  <UserComp/>
+
+</div>
 </template>
 <script>
-// import UpdateUser from '@/components/UpdateUser.vue'
-// import AddProduct from '@/components/AddProduct.vue'
+import AddUser from '@/components/AddUser.vue'
+import AddProduct from '@/components/AddProduct.vue'
+import UserComp from '@/components/UserComp.vue'
 export default {
-  name: 'AdminView',
   components: {
-    // AddProduct,
-    // UpdateUser
+    AddProduct,
+    AddUser,
+    UserComp
   }
 }
+
 </script>
 <style scoped>
+
+h1{
+  align-items: center;
+  font-weight: 700;
+  color: #08172E;
+  margin-left: 40%;
+  text-decoration: underline;
+}
   
 </style>

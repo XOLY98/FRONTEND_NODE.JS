@@ -1,9 +1,10 @@
 <template>
+<div class="products">
+    <h1>PRODUCTS</h1>
     <div class="container-fluid">
         <div class="row">
-            <h1>this is a product page </h1>
         </div>
-        <div class="row gap-3">
+       <div class="row gap-3">
             <div class="card" 
             style="width: 18rem ;"
             v-for="item in Catalogue" :key="item.prodID" >
@@ -17,6 +18,7 @@
            </div>
         </div>
     </div>
+</div>
 </template>
 <script>
 import { computed } from "@vue/runtime-core";
@@ -35,12 +37,19 @@ export default {
 };
 </script>
 <style scoped>
+.products{
+    padding-top: 5rem;
+}
+    h1{
+        margin-left: 45%;
+    }
     .card{
         background-color: #08172E;
         opacity: 1;
         box-shadow:  yellow 5px 5px 5px;
         height: 28rem;
         margin-bottom:5%;
+        margin-top: 25px;
     }
     .card-text{
         color:white;
@@ -58,5 +67,10 @@ export default {
     }
     img{
         height: 50%;
+    }
+    h1{
+        color: #08172E;
+        text-align: center;
+        text-decoration: underline solid #08172E;
     }
 </style>

@@ -10,13 +10,15 @@ export default createStore({
     showSpinner: true,
     message: null,
   },
-  getters: {},
+  getters: {
+    getConsumers:(state)=>state.consumers
+  },
   mutations: {
     setConsumers(state, values) {
-      state.users = values;
+      state.consumers = values;
     },
     setConsumer(state, value) {
-      state.user = value;
+      state.consumer = value;
     },
     setMessage(state, value) {
       state.message = value;

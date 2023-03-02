@@ -2,11 +2,11 @@
   <div class="animated-title">
     <div class="text-top">
       <div>
-        <span>Styletto's</span>
+        <span>Styletto's About Us</span>
       </div>
     </div>
     <div class="text-bottom">
-      <div>for the win!</div>
+      <div>We are an organisation specializing in feminine footwear, we value women's wants.</div>
     </div>
   </div>
   <div class>
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-// import SpinnerComp from '../components/SpinnerComp.vue'
+
 export default {
     name: 'HomeView',
   components: {
-    // SpinnerComp
+    
   }
 }
 
@@ -130,6 +130,8 @@ img{
   margin-left: 10px;
 }
 
-
+.text-bottom{
+  font-size: 5px;
+}
 
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <h1>this is  a contact page </h1>  
+
+  <h1>Contact page </h1>  
+
     <div class="formy">
       <form action="https://formspree.io/f/xoqzwqgn" method="POST" class="row g-3">
         <div class="col-md-4">
@@ -54,12 +56,14 @@
       </form>
     </div>
 </template>
+
 <script>
 export default {
     name:'contactView',
     
 }
 </script>
+
 <style scoped>
 .formy{
   background-color: #08172E;

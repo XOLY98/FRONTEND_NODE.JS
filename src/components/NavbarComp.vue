@@ -1,7 +1,7 @@
 <template>
     <div> 
-        <nav class="navbar sticky-top ">
-        <div class="d2 container-fluid">
+        <nav class="navbar navbar-inverse navbar-static-top fixed-top">
+        <div class="container-fluid">
           <img alt="logo" src="https://i.postimg.cc/PxjSL4FC/logo-SYTLETTOS-removebg-preview.png" height="125" width="200">
           <router-link to="/">Home</router-link>
           <router-link to="/admin">Admin</router-link>
@@ -9,7 +9,6 @@
           <router-link to="/contact" class="contact">Contact</router-link>
           <router-link to="/login" class="login">Login</router-link>
           <router-link to="/register" class="register">Register</router-link>
-
         </div>
       </nav>
     </div>
