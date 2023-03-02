@@ -22,6 +22,10 @@ route.get('/consumers', (req, res)=> {
     consumer.fetchConsumers(req, res);
 });
 
+route.get('/consumer/:id', (req, res)=> { 
+    consumer.fetchConsumer(req, res);
+});
+
 route.post('/consumer', bodyParser.json(), (req, res)=>{
     consumer.createConsumer(req, res);
 });

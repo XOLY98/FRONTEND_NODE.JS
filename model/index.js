@@ -50,7 +50,7 @@ class Consumer{
     fetchConsumers(req, res) {
         const qRy = 
         `
-        SELECT DEFAULT, firstName, lastName, gender, cellphoneNumber, emailAdd, conRole, conProf, loginDate
+        SELECT conID, firstName, lastName, gender, cellphoneNumber, emailAdd, conRole, conProf, loginDate
         FROM Consumers;
         `;
 
@@ -59,10 +59,10 @@ class Consumer{
             else res.status(200).json({results:data})
         })
     }
-    fetchConsumers(req, res) {
+    fetchConsumer(req, res) {
         const qRy = 
         `
-        SELECT  firstName, lastName , gender, cellphoneNumber, emailAdd, conRole , conProf, loginDate
+        SELECT conID, firstName, lastName , gender, cellphoneNumber, emailAdd, conRole , conProf, loginDate
         FROM Consumers
         WHERE conID = ?;
         `
