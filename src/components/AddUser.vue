@@ -1,16 +1,6 @@
 <template>
-    <div>
-    <!-- Button trigger modal -->
-  <button
-  type="button"
-  class="btn btn-primary"
-  data-bs-toggle="modal"
-  data-bs-target="#hair-products"
->
-  Add User
-</button>
+<div>
 
-<!--Add Modal -->
 <div
   class="modal fade"
   id="hair-products"
@@ -100,33 +90,86 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      
+      <th scope="col">Profile</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Role</th>
+      <th scope="col">Cellphone Number</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Add User</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody v-for="item in Consumers" :key="item.conID">
+    <img :src="item.conProf" class="card-img-top" alt="...">
     <tr>
       <th scope="row"></th>
-      <td>{{hnv}}</td>
-      <td>{{jgkll}}</td>
-      <td>{{jgjn}}</td>
+      <td> {{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.emailAdd}}</td>
+      <td>{{item.conRole}}</td>
+      <td>{{item.cellphoneNumber}}</td>
+      <td><button
+        type="button"
+        class="btn btn-outline-success"
+        data-bs-toggle="modal"
+        data-bs-target="#hair-products"
+      >
+        Edit
+      </button></td>
+      <td><button
+        type="button"
+        class="btn btn-outline-success"
+        data-bs-toggle="modal"
+        data-bs-target="#hair-products"
+      >
+        Delete
+      </button></td>
+      <td><button
+        type="button"
+        class="btn btn-outline-success"
+        data-bs-toggle="modal"
+        data-bs-target="#hair-products"
+      >
+        Add Product
+      </button></td>
+      
     </tr>
   </tbody>
 </table>
     </div>
 </template>
+
 <script>
+import { computed } from "@vue/runtime-core";
+import { useStore } from "vuex";
 export default {
-    
-}
+  setup() {
+    const store = useStore();
+    store.dispatch("fetchConsumers");
+    const Consumers = computed(() => store.state.consumers);
+    return {
+      Consumers,
+    };
+  },
+
+};
 </script>
+
 <style scoped>
-table{
+.table{
     background-color: #08172E;
     color:whitesmoke;
     width: 80%;
+    margin-left: 9%;
   }
+
+  img{
+    width: 3vw;
+    height: 5vh;
+  }
+
 </style>

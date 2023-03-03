@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="A-div">
 
   <h1>Admin</h1>
   
@@ -22,14 +22,19 @@ export default {
 }
 
 </script>
+
 <style scoped>
+
+.A-div{
+  margin-top: 195px;
+}
 
 h1{
   align-items: center;
   font-weight: 700;
   color: #08172E;
   margin-left: 40%;
-  text-decoration: underline;
+  text-transform: uppercase;
 }
   
 </style>

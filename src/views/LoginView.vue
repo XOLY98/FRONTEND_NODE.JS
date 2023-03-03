@@ -1,12 +1,13 @@
 <template>
-   <div class="login-form">
+   <div class="login-form text-center">
+    <h1>Login</h1>
     <form action="https://formspree.io/f/xoqzwqgn" method="POST" class="row g-3 container fluid">
       <div class="col-md-4">
-        <label for="validationDefault02" class="form-label">Username</label>
-        <input type="text" class="form-control" id="validationDefault02" name="name" required>
+        <label for="validationDefault02" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="validationDefault02" name="name" required>
       </div>
       <div class="col-md-4">
-        <label for="validationDefaultUsername" class="form-label">Email</label>
+        <label for="validationDefaultPassword" class="form-label">Password</label>
         <div class="input-group">
           <span class="input-group-text" id="inputGroupPrepend2">@</span>
           <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" name="name" required>
@@ -21,7 +22,7 @@
         </div>
       </div>
       <div class="row col-md-4">
-        <button class="btn-s btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-outline-success" type="submit">Submit form</button>
       </div>
     </form>
    </div>
@@ -40,16 +41,21 @@ export default {
 </script>
 <style scoped>
 
+h1{
+  color: white;
+  text-transform: uppercase;
+}
+
 label.form-check-label{
  color: white;
 }
 
     .login-form{
       background-color: #08172E;
-      width: 40vw; 
-    height: 50vh;
-    margin-top: 50px;
-    transform: translateX(55%);
+      width: 60vw; 
+      padding: 2%;
+    margin-top: 195px;
+    transform: translateX(30%);
     box-shadow: #08172E 5px 5px 5px 5px;
     border-radius: 10px;
     }

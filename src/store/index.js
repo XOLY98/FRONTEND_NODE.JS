@@ -11,7 +11,11 @@ export default createStore({
     message: null,
   },
   getters: {
-    getConsumers:(state)=>state.consumers
+    getConsumers:(state)=>state.consumers,
+
+    showsSpinner(state) {
+      return state.showSpinner
+    }
   },
   mutations: {
     setConsumers(state, values) {
@@ -29,6 +33,9 @@ export default createStore({
     setItem(state, value) {
       state.product = value;
     },
+    showSpinner(state, value){
+      state.showSpinner = value
+    }
   },
   actions: {
     async fetchConsumers(context) {
@@ -41,13 +48,17 @@ export default createStore({
       }
     },
     async fetchCatalogue(context) {
+      context.commit('showSpinner', true)
+
       const res = await axios.get(`${bedURL}Catalogue`);
       const { results, err } = await res.data;
       if (results) {
         // console.log(results);
         context.commit("setCatalogue", results);
+        context.commit("showSpinner", false);
       } else {
         context.commit("setItem", err);
+        context.commit("showSpinner", true);
       }
     },
   },

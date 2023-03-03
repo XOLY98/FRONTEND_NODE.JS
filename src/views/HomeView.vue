@@ -1,17 +1,17 @@
 <template>
   <div class="animated-title">
     <div class="text-top">
-      <div>
-        <span>Styletto's About Us</span>
+      <div >
+        <span>About Us</span>
       </div>
     </div>
-    <div class="text-bottom">
+    <div class="text-bottom ">
       <div>We are an organisation specializing in feminine footwear, we value women's wants.</div>
     </div>
   </div>
   <div class>
   </div>
-   <img src="https://i.postimg.cc/gJhLQK8p/front-page-removebg-preview.png" alt="front page">
+   <img src="https://i.postimg.cc/gJhLQK8p/front-page-removebg-preview.png" height="400rem" alt="front page">
 
 <!-- Modal -->
 
@@ -84,7 +84,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 90vmin;
   margin-left: 300px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 .animated-title > div {
   height: 50%;
@@ -93,13 +93,14 @@ export default {
   width: 80%;
 }
 .animated-title > div div {
-  font-size: 7vmin;
+  font-size: 5vmin;
   padding: 2vmin 0;
   position: absolute;
 }
 .animated-title > div div span {
   display: block;
-  color:#000
+  color:#000;
+  font-size:10vmin;
 }
 .animated-title > div.text-top {
   border-bottom: 1vmin solid #000;
@@ -126,7 +127,7 @@ export default {
   transform: translate(0, -100%);
 }
 img{
-  margin-top: 30px;
+  margin-top: 195px;
   margin-left: 10px;
 }
 

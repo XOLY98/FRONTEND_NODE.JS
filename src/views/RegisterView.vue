@@ -1,6 +1,6 @@
 <template>
-  <h1>Register</h1>
- <div class="register-form"> 
+  <div class="register-form text-cent"> 
+   <h1>Register</h1>
   <form action="https://formspree.io/f/xoqzwqgn" method="POST" class="row g-3">
   <div class="col-md-4">
     <label for="validationDefault01" class="form-label">First name</label>
@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-outline-success" type="submit">Submit form</button>
   </div>
 </form>
 
@@ -69,12 +69,17 @@ export default {
 </script>
 
 <style scoped>
+
+h1{
+  color: white;
+  text-transform: uppercase;
+}
     .register-form{
       background-color: #08172E;
       opacity: 0.9;
       width: 47vw; 
-    height: 45vh;
-    margin-top: 50px;
+      padding: 2%;
+    margin-top: 195px;
     transform: translateX(55%);
     box-shadow: #08172E 5px 5px 5px 5px;
     border-radius: 10px;

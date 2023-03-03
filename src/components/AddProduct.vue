@@ -1,16 +1,5 @@
 <template>
-   
-  <!-- Button trigger modal -->
-  <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#hair-products"
-  >
-    Add Product
-  </button>
 
-  <!--Add Modal -->
   <div
     class="modal fade"
     id="hair-products"
@@ -19,6 +8,7 @@
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
   >
+
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -100,31 +90,46 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Image</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Product Description</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
+        <th scope="col">Add Product</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-for="item in Catalogue" :key="item.prodID">
+      <img :src="item.imgURL" class="card-img-top" alt="...">
       <tr>
-        <th scope="row">1</th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2"></td>
-        <td></td>
+        <th scope="row"></th>
+        <td> {{item.prodName}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.prodDes}}</td>
+        <td><button
+          type="button"
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#hair-products"
+        >
+          Edit
+        </button></td>
+        <td><button
+          type="button"
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#hair-products"
+        >
+          Delete
+        </button></td>
+        <td><button
+          type="button"
+          class="btn btn-outline-success"
+         
+        >
+          Add Product
+        </button></td>
+        
       </tr>
     </tbody>
   </table>
@@ -134,18 +139,39 @@
 
 </template>
 <script>
+import { computed } from "@vue/runtime-core";
+import { useStore } from "vuex";
 export default {
-      name: "AddProduct"
-}
+  setup() {
+    const store = useStore();
+    store.dispatch("fetchCatalogue");
+    const Catalogue = computed(() => store.state.catalogues);
+    return {
+      Catalogue,
+    };
+  },
+
+};
 </script>
+
 <style scoped>
-    table{
+
+    .table{
       background-color: #08172E;
       color:whitesmoke;
       width: 80%;
-    transform: translateX('30%');
+      margin-left: 9%;
     }
+
     button{
       transform: translateX('50%') ;
     }
+
+    img{
+      width: 3vw;
+      height: 5vh;
+    }
+   
+  
+
 </style>

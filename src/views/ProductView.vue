@@ -1,54 +1,68 @@
 <template>
 <div class="products">
-    <h1>PRODUCTS</h1>
-    <div class="container-fluid">
-        <div class="row">
+
+    <h1>Products</h1>
+
+    <div class="row gap-3">
+
+        <div v-if="SpinnerComp">
+            <SpinnerComp/>
         </div>
-       <div class="row gap-3">
-            <div class="card" 
-            style="width: 18rem ;"
-            v-for="item in Catalogue" :key="item.prodID" >
+
+            
+        <div class="card" style="width: 18rem ;" v-else  v-for="item in Catalogue" :key="item.prodID" >
              <img :src="item.imgURL" class="card-img-top" alt="...">
-             <div class="card-body">
+             <div class="row card-body">
                <h5 class="card-title">{{item.prodName}}</h5>
-               <p class="card-text">{{item.price}}</p>
+               <p class="card-text">R {{item.price}}</p>
                <p class="card-text">{{item.prodDes}}</p>
-               <a href="#" class="btn btn-primary">See more</a>
+               <router-link to="/SingleProd"><a class="btn btn-outline-success" >See more</a></router-link>
              </div>
-           </div>
+           
         </div>
+
     </div>
+
 </div>
 </template>
+
 <script>
+
+import SpinnerComp from "@/components/SpinnerComp.vue";
 import { computed } from "@vue/runtime-core";
 import { useStore } from "vuex";
-export default {
-  setup() {
-    const store = useStore();
-    store.dispatch("fetchCatalogue");
-    const Catalogue = computed(() => store.state.catalogues);
-    // console.log(computed(() => store.state.Catalogue));
-    return {
-      Catalogue,
-    };
-  },
 
+export default {
+    setup() {
+        const store = useStore();
+        store.dispatch("fetchCatalogue");
+        const Catalogue = computed(() => store.state.catalogues);
+        const SpinnerComp = computed(() => store.getters.showSpinner);
+        return {
+            Catalogue,
+            SpinnerComp
+        };
+    },
+    components: SpinnerComp
 };
+
 </script>
+
 <style scoped>
-.products{
-    padding-top: 5rem;
-}
-    h1{
-        margin-left: 45%;
+
+    div.row{
+        margin-left: 12px;
+    }
+    .products{
+    margin-top: 195px;
+    margin-bottom: 50px;
     }
     .card{
         background-color: #08172E;
         opacity: 1;
-        box-shadow:  yellow 5px 5px 5px;
+        box-shadow:  #198754 5px 5px 5px;
         height: 28rem;
-        margin-bottom:5%;
+        margin-bottom:25px;
         margin-top: 25px;
     }
     .card-text{
@@ -56,21 +70,25 @@ export default {
     
     }
     .card-title{
-        color: yellow;
-        font-size: larger;
+        color: white;
+        font-size: x-large;
     }
-    .btn{
-        background-color: yellow;
-        border:none;
-        border-radius:none;
-        color: #08172E;
-    }
+
     img{
         height: 50%;
     }
+
     h1{
         color: #08172E;
         text-align: center;
-        text-decoration: underline solid #08172E;
+        font-weight: 700;
+        text-transform: uppercase;
     }
+
+    @media (max-with: 768px) {
+        div.row {
+            transform: translateX(60%);
+        }
+    }
+
 </style>
