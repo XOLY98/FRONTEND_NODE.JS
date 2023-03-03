@@ -8,16 +8,37 @@
 
                 <h6 class="m-auto p-3">&copy;Copyright Styletto's 2023. All rights reserved.</h6>
 
-                <div class="social-links align-items-center p-3"></div>
-
-                <a href="" class="me-2"><i class="bi bi-facebook"></i></a>
-
-                <a href="" class="me-2"><i class="bi bi-instagram"></i></a>
-
-                <a href="" class="me-2"><i class="bi bi-twitter"></i></a>
-
-                <a href="" class="me-2"><i class="bi bi-email"></i></a>
-
+                <a href="https://www.facebook.com/xolelwa.manqina.92"><i class="bi bi-facebook fa-bounce mx-2"
+                    style="--fa-bounce-scale-x:1;
+                    --fa-bounce-scale-y:1;
+                    --fa-bounce-scale-x:1;
+                    --fa-bounce-scale-y:1;
+                    --fa-bounce-rebound:0;"
+                    ></i>               </a>
+                   <a href="https://github.com/XOLY98"><i class="bi bi-github fa-bounce mx-2"
+                   style="--fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-rebound:0;"
+                   ></i>
+                   </a>
+                   <a href="https://twitter.com/manqinaxolelwa"><i class="bi bi-twitter fa-bounce mx-2"
+                   style="--fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-rebound:0;"
+                   ></i>
+                   </a>
+                   <a href="https://www.linkedin.com/in/xolelwa-manqina-5743a6241/"><i class="bi bi-linkedin fa-bounce mx-2"
+                   style="--fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-scale-x:1;
+                   --fa-bounce-scale-y:1;
+                   --fa-bounce-rebound:0;"
+                   ></i>
+                   </a>
             </div>
 
         </div>
@@ -35,13 +56,15 @@ export default {
 </script>
 
 <style scoped>
+i{
+    color: #198754;
+    font-size: 20px;
+}
+
 .row {
     background-color: #08172E;
 }
 
-.social-links a{
-     color: yellow;
-}
 h6{
     color:whitesmoke;
 }

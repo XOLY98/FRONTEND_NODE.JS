@@ -1,5 +1,5 @@
 <template>
-
+  
   <NavbarComp/>
   <router-view/>
   <FooterComp/>
@@ -23,5 +23,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>

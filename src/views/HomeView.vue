@@ -1,112 +1,36 @@
 <template>
   <div class="animated-title">
     <div class="text-top">
-      <div>
-        <span>Styletto's</span>
+      <div >
+        <span>About Us</span>
       </div>
     </div>
-    <div class="text-bottom">
-      <div>for the win!</div>
+    <div class="text-bottom ">
+      <div>We are an organisation specializing in feminine footwear, we value women's wants.</div>
     </div>
   </div>
-  <div>
-<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
- LOGIN
-</button>
-<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  REGISTER
-</button>
+  <div class>
   </div>
-  <img src="https://i.postimg.cc/gJhLQK8p/front-page-removebg-preview.png" alt="front page">
+   <img src="https://i.postimg.cc/gJhLQK8p/front-page-removebg-preview.png" height="400rem" alt="front page">
 
 <!-- Modal -->
-<div>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">YOUR DETAILS...</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"  aria-describedby="emailHelp" required>Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"  aria-describedby="passwordHelp" required>Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1"  aria-describedby="checkmeoutHelp" required>Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">YOUR DETAILS...</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." aria-describedby="nameHelp" required><br>
-      <pre></pre>
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." aria-describedby="lastnameHelp" required><br>
-      <pre></pre>
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="Your email address.." aria-describedby="emailHelp" required><br>
-      <pre></pre>  
-          <label for="message">Message:</label>
-          <input type="text" id="message" name="message" placeholder="Your message.." aria-describedby="messageHelp" required><br>
-      <pre></pre>
-          <label for="country">Country:</label>
-          <select id="country" name="country">
-          <option value="south africa"> South Africa</option>
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select><br>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
+
+  
  
 </template>
 
 <script>
-// import SpinnerComp from '../components/SpinnerComp.vue'
+
 export default {
     name: 'HomeView',
   components: {
-    // SpinnerComp
+    
   }
 }
 
 </script>
 
-<style>
+<style scoped>
 .btn{
   
   margin:0 auto;
@@ -160,7 +84,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 90vmin;
   margin-left: 300px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 .animated-title > div {
   height: 50%;
@@ -169,13 +93,14 @@ export default {
   width: 80%;
 }
 .animated-title > div div {
-  font-size: 7vmin;
+  font-size: 5vmin;
   padding: 2vmin 0;
   position: absolute;
 }
 .animated-title > div div span {
   display: block;
-  color:#000
+  color:#000;
+  font-size:10vmin;
 }
 .animated-title > div.text-top {
   border-bottom: 1vmin solid #000;
@@ -202,12 +127,12 @@ export default {
   transform: translate(0, -100%);
 }
 img{
-  margin-top: 30px;
+  margin-top: 195px;
   margin-left: 10px;
 }
-.modal-body ,.modal-dialog, .modal-footer{
-  background-color:#08172E ;
-}
 
+.text-bottom{
+  font-size: 5px;
+}
 
 </style>
